@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "zh-cn"
-theme = "timemeet"
+theme = "ananke"
 paginate = 5
 
 [params]

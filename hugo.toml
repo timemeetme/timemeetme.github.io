@@ -1,4 +1,4 @@
 baseURL = 'https://timemeet.me/'
 languageCode = 'zh-cn'
 title = 'timemeet.me'
-theme = 'timemeet'
+theme = 'ananke'
