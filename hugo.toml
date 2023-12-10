@@ -1,0 +1,4 @@
+baseURL = 'https://timemeet.me/'
+languageCode = 'en-us'
+title = 'timemeet.me'
+theme = 'ananke'
