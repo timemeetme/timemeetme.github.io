@@ -1,0 +1,3 @@
+[submodule "themes/timemeet"]
+	path = themes/timemeet
+	url = git@github.com:timemeetme/timemeetme.git
