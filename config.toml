@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "zh-cn"
-theme = "terminal"
+theme = "ananke"
 paginate = 5
 
 [params]
