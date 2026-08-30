@@ -1,0 +1,73 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>从hexo转向hugo · timemeet</title><meta name=description content="本篇记录一下blog从hexo转向使用hugo的过程
+
+安装依赖
+
+
+
+Git
+
+
+Go: refer to https://go.dev/doc/install
+
+
+Dart Sass:
+通过snap安装(推荐)：
+安装并启动snap:
+sudo apt-get install snapd
+sudo apt-get install snapcraft
+如果中途网络卡住，清除并重新安装:"><meta name=author content="mate16"><meta name=generator content="Hugo"><meta name=color-scheme content="light dark"><link rel=canonical href=https://timemeet.me/posts/20231210/><link rel=icon href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e13'/%3E%3Crect x='27' y='13' width='10' height='26' rx='3' fill='%23e5e7eb'/%3E%3Crect x='16' y='24' width='32' height='10' rx='3' fill='%23e5e7eb'/%3E%3Crect x='16' y='48' width='18' height='6' rx='3' fill='%2322d3ee'/%3E%3C/svg%3E"><link rel=stylesheet href=/css/bundle.min.3dacbed970edac497b7a961ab348627de99b17dd620bec17d18204bde151a7f1.css><meta name=generator content="Hugo 0.164.0"></head><body><a class=skip-link href=#main>跳至正文</a><header class=site-head><div class="wrap head-row"><a class=site-brand href=/><span class=brand-dot aria-hidden=true></span>
+<span class=site-name>timemeet</span></a><nav class=site-nav aria-label=站内导航><a href=/>首页</a>
+<a href=/videos/>视频</a>
+<a href=/archives/>归档</a>
+<a href=/index.xml>RSS</a></nav></div></header><main id=main class=site-main><article class=article><header class=article-head><p class=article-kicker><time datetime=2023-12-10>2023-12-10</time></p><h1 class=article-title>从hexo转向hugo</h1><p class=article-meta><span>534 字</span>
+<span aria-hidden=true>·</span>
+<span>约 2 分钟</span></p></header><div class=prose><p>本篇记录一下blog从hexo转向使用hugo的过程</p><ol><li>安装依赖</li></ol><ul><li><p>Git</p></li><li><p>Go: refer to <a href=https://go.dev/doc/install>https://go.dev/doc/install</a></p></li><li><p>Dart Sass:</p><p><strong>通过snap安装(推荐)：</strong>
+安装并启动snap:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo apt-get install snapd
+</span></span><span class=line><span class=cl>sudo apt-get install snapcraft
+</span></span></code></pre></div><p>如果中途网络卡住，清除并重新安装:</p><pre tabindex=0><code>sudo killall apt apt-get
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock*
+sudo dpkg --configure -a
+</code></pre><p>使用snap安装dart sass:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo snap install dart-sass
+</span></span></code></pre></div><p>如果snap命令执行失败(cannot communicate with server: Post http://localhost/v2/snaps)，则手动启动snapd</p><pre tabindex=0><code>#root@wsl: dart-sass 1.69.0 from Joe Mooring (jmooring) installed
+</code></pre><p><strong>通过homebrew安装：</strong>
+<a href=https://docs.brew.sh/Homebrew-on-Linux>Install homebrew</a>
+** 下载并安装到默认目录 /home/linuxbrew/.linuxbrew/</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>/bin/bash -c <span class=s2>&#34;</span><span class=k>$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class=k>)</span><span class=s2>&#34;</span>
+</span></span></code></pre></div><p>Add to your linux PATH:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>test</span> -d ~/.linuxbrew <span class=o>&amp;&amp;</span> <span class=nb>eval</span> <span class=s2>&#34;</span><span class=k>$(</span>~/.linuxbrew/bin/brew shellenv<span class=k>)</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>test</span> -d /home/linuxbrew/.linuxbrew <span class=o>&amp;&amp;</span> <span class=nb>eval</span> <span class=s2>&#34;</span><span class=k>$(</span>/home/linuxbrew/.linuxbrew/bin/brew shellenv<span class=k>)</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;eval \&#34;\$(</span><span class=k>$(</span>brew --prefix<span class=k>)</span><span class=s2>/bin/brew shellenv)\&#34;&#34;</span> &gt;&gt; ~/.bashrc
+</span></span></code></pre></div><p>Install Dart Sass using homebrew: <code>brew install sass/sass/sass</code></p></li></ul><ol start=2><li>安装hugo：</li></ol><ul><li>使用ubuntu apt安装hugo(推荐):<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo apt install hugo
+</span></span></code></pre></div></li><li>使用snap安装hugo：<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo snap install hugo
+</span></span></code></pre></div></li><li>使用homebrew安装hugo：<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>brew install hugo
+</span></span></code></pre></div></li></ul><ol start=3><li>hugo demo：</li></ol><ul><li>启动hugo的http server：</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>hugo new site quickstart
+</span></span><span class=line><span class=cl><span class=nb>cd</span> quickstart
+</span></span><span class=line><span class=cl>git init
+</span></span><span class=line><span class=cl>git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;theme = &#39;ananke&#39;&#34;</span> &gt;&gt; hugo.toml
+</span></span><span class=line><span class=cl>hugo server
+</span></span></code></pre></div><ol start=4><li>自定义</li></ol><ul><li>部署到cloudflare page
+<a href=https://gohugo.io/hosting-and-deployment/hosting-on-cloudflare-pages/>https://gohugo.io/hosting-and-deployment/hosting-on-cloudflare-pages/</a></li><li>静态图片目录
+直接新建目录存放在<code>/static/</code>下，编译时会自动打包至<code>/public/</code>下(与<code>/public/posts</code>同级)
+markdown中引用静态图片</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>!<span class=o>[</span>img1<span class=o>](</span>/pic/20230128/1.jpg<span class=o>)</span>
+</span></span></code></pre></div><ol start=5><li>主题目录</li></ol><ul><li>添加主题</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+</span></span></code></pre></div><ul><li>修改主题
+hugo配置文件<code>hugo.toml</code>:</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nv>baseURL</span> <span class=o>=</span> <span class=s1>&#39;https://timemeet.me/&#39;</span>
+</span></span><span class=line><span class=cl><span class=nv>languageCode</span> <span class=o>=</span> <span class=s1>&#39;zh-cn&#39;</span>
+</span></span><span class=line><span class=cl><span class=nv>title</span> <span class=o>=</span> <span class=s1>&#39;timemeet.me&#39;</span>
+</span></span><span class=line><span class=cl><span class=nv>theme</span> <span class=o>=</span> <span class=s1>&#39;ananke&#39;</span>
+</span></span></code></pre></div><p>cloudflare pages配置文件 <code>config.toml</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nv>baseurl</span> <span class=o>=</span> <span class=s2>&#34;/&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>languageCode</span> <span class=o>=</span> <span class=s2>&#34;zh-cn&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>theme</span> <span class=o>=</span> <span class=s2>&#34;ananke&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>paginate</span> <span class=o>=</span> <span class=m>5</span>
+</span></span><span class=line><span class=cl>...
+</span></span></code></pre></div></div><footer class=article-foot><nav class=post-nav aria-label=文章导航><a class=prev href=/posts/20230128/><span class=post-nav-label>← 上一篇</span>
+<span class=post-nav-title>2023第一个工作日</span>
+</a><a class=next href=/posts/20260823/><span class=post-nav-label>下一篇 →</span>
+<span class=post-nav-title>改造我的静态博客</span></a></nav></footer></article></main><footer class=site-foot><div class="wrap foot-row"><p class=foot-meta><span>© 2026 timemeet.me</span>
+<span aria-hidden=true>/</span>
+<a href=/index.xml>RSS</a>
+<span aria-hidden=true>/</span>
+<a href=https://space.bilibili.com/473840157 target=_blank rel=noopener>哔哩哔哩</a>
+<span aria-hidden=true>/</span>
+<a href=https://www.xiaohongshu.com/user/profile/6292e16a0000000021029bbf target=_blank rel=noopener>小红书</a></p><span class=foot-note>timemeet.me</span></div></footer></body></html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>文章 on timemeet</title><link>https://timemeet.me/posts/</link><description>mate16 的个人博客</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 31 Aug 2026 01:00:00 +0800<atom:link href="https://timemeet.me/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>本地视觉模型对比小记</title><link>https://timemeet.me/posts/20260831/</link><pubDate>Mon, 31 Aug 2026 01:00:00 +0800</pubDate><guid>https://timemeet.me/posts/20260831/</guid><description>&lt;p&gt;今天尝试了一下在M4 Pro 24G 内存的MacBook本地跑视觉模型，候选有两个：Qwen3-VL-30B-A3B-Thinking-4bit 和 gemma-4-26B-A4B-4bit。都是 MoE 架构的 4bit 量化版，一个 30B 总参激活 3B，一个 26B 总参激活 4B，在 Mac 上用 MLX 的 &lt;code&gt;mlx_vlm.generate&lt;/code&gt; 都能跑得动。拿两张图简单各测了一轮，只能说是：&lt;strong&gt;各有优劣&lt;/strong&gt;。&lt;/p&gt;</description></item><item><title>改造我的静态博客</title><link>https://timemeet.me/posts/20260823/</link><pubDate>Sun, 23 Aug 2026 13:30:00 +0800</pubDate><guid>https://timemeet.me/posts/20260823/</guid><description>&lt;p&gt;上一篇《从hexo转向hugo》还是 2023 年的事。三年过去，博客还开着，但早就想动手大修一次：主题是别人的、部署是半自动的、构建时常抽风。这个夏天终于把它收拾成了自己想要的样子，记一笔。&lt;/p&gt;</description></item><item><title>从hexo转向hugo</title><link>https://timemeet.me/posts/20231210/</link><pubDate>Sun, 10 Dec 2023 20:08:20 +0800</pubDate><guid>https://timemeet.me/posts/20231210/</guid><description>&lt;p&gt;本篇记录一下blog从hexo转向使用hugo的过程&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安装依赖&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Git&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go: refer to &lt;a href="https://go.dev/doc/install"&gt;https://go.dev/doc/install&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dart Sass:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;通过snap安装(推荐)：&lt;/strong&gt;
+安装并启动snap:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt-get install snapd
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt-get install snapcraft
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果中途网络卡住，清除并重新安装:&lt;/p&gt;</description></item><item><title>2023第一个工作日</title><link>https://timemeet.me/posts/20230128/</link><pubDate>Sat, 28 Jan 2023 23:18:08 +0800</pubDate><guid>https://timemeet.me/posts/20230128/</guid><description>&lt;p&gt;开工第一天，午间闲逛公司小树林，在树枝头发现一只小松鼠 。它躲在枝桠背后，瞪大双眼偷偷看我，在我抬起相机的时候蹬腿一跃，腾空而起，跳上树冠——速度之快像是鸟飞，我快门里只留下它肥溜溜、毛茸茸的大尾巴。
+&lt;img src="https://timemeet.me/pic/20230128/1.jpg" alt="img1"&gt;
+&lt;img src="https://timemeet.me/pic/20230128/2.jpg" alt="img2"&gt;&lt;/p&gt;</description></item></channel></rss>
